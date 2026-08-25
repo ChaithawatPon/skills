@@ -1,0 +1,25 @@
+[
+  {
+    "kind": "topic",
+    "text": "Source: [[Personal/Journal/30-07-26]]"
+  },
+  {
+    "kind": "task",
+    "status": "open",
+    "text": "Review the profile animation"
+  },
+  {
+    "kind": "task",
+    "status": "in-progress",
+    "text": "Test the daily-note rerun"
+  },
+  {
+    "kind": "task",
+    "status": "done",
+    "text": "Record the output contract"
+  },
+  {
+    "kind": "topic",
+    "text": "Decision: preserve user-written sections"
+  }
+]

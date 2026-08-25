@@ -1,0 +1,37 @@
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: skills/sell-to-facebook-marketplace/package-lock.json
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: python3 skills/edit-video/scripts/validate-skill.py skills/edit-video
+      - run: python3 -m pip install -r skills/edit-video/requirements.txt
+      - run: python3 skills/edit-video/scripts/test_fixture_smoke.py
+      - run: python3 skills/social-update/scripts/validate-skill.py skills/social-update
+      - run: python3 skills/social-update/scripts/test_job_hunter.py
+      - run: python3 skills/sumup/scripts/validate-skill.py skills/sumup
+      - run: python3 skills/today-obsidian/scripts/validate-skill.py skills/today-obsidian
+      - run: python3 test_today_obsidian.py
+        working-directory: skills/today-obsidian/scripts
+      - run: npm ci
+        working-directory: skills/sell-to-facebook-marketplace
+      - run: npm test
+        working-directory: skills/sell-to-facebook-marketplace

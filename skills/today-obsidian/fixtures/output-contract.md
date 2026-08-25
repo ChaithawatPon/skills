@@ -1,0 +1,5 @@
+- Source: [[Personal/Journal/30-07-26]]
+- [ ] Review the profile animation
+- [/] Test the daily-note rerun
+- [x] Record the output contract
+- Decision: preserve user-written sections

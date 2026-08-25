@@ -1,0 +1,4 @@
+interface:
+  display_name: "Social Update"
+  short_description: "Manage profiles, public work, jobs, and opportunities"
+  default_prompt: "Use $social-update to manage my professional profiles, public content, jobs, and opportunities."
