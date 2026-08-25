@@ -20,3 +20,5 @@ from its standalone repository so this catalog keeps `SKILL.md` at
 `skills/scripts/install-skill.py` is the Marketplace package installer copied
 from the standalone wrapper so `npm test` still finds it one directory above
 the package.
+
+CI lives at `.github/workflows/validate.yml`.

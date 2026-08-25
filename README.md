@@ -44,8 +44,7 @@ Every skill must provide:
 
 ## CI
 
-The GitHub Actions workflow source is `docs/github-validate.yml`. Moving it to
-`.github/workflows/` needs a GitHub token with the `workflow` scope.
+GitHub Actions runs `Validate skills` from `.github/workflows/validate.yml`.
 
 ## Privacy
 
