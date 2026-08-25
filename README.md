@@ -42,6 +42,11 @@ Every skill must provide:
 - validation, plus runtime tests where the skill has runtime behavior
 - explicit privacy and approval boundaries
 
+## CI
+
+The GitHub Actions workflow source is `docs/github-validate.yml`. Moving it to
+`.github/workflows/` needs a GitHub token with the `workflow` scope.
+
 ## Privacy
 
 This repository contains public-safe skill source only. It does not contain
