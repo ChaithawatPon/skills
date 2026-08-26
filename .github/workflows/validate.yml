@@ -20,18 +20,12 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: skills/sell-to-facebook-marketplace/package-lock.json
+          cache-dependency-path: skills/selling/sell-to-facebook-marketplace/package-lock.json
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - run: python3 skills/edit-video/scripts/validate-skill.py skills/edit-video
-      - run: python3 -m pip install -r skills/edit-video/requirements.txt
-      - run: python3 skills/edit-video/scripts/test_fixture_smoke.py
-      - run: python3 skills/social-update/scripts/validate-skill.py skills/social-update
-      - run: python3 skills/social-update/scripts/test_job_hunter.py
-      - run: python3 skills/sumup/scripts/validate-skill.py skills/sumup
-      - run: python3 skills/today-obsidian/scripts/validate-skill.py skills/today-obsidian
-      - run: python3 test_today_obsidian.py
-        working-directory: skills/today-obsidian/scripts
+      - run: bash scripts/validate.sh
+      - run: python3 -m pip install -r skills/media/edit-video/requirements.txt
+      - run: python3 skills/media/edit-video/scripts/test_fixture_smoke.py
       - run: npm ci
-        working-directory: skills/sell-to-facebook-marketplace
+        working-directory: skills/selling/sell-to-facebook-marketplace
       - run: npm test
-        working-directory: skills/sell-to-facebook-marketplace
+        working-directory: skills/selling/sell-to-facebook-marketplace

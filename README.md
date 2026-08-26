@@ -1,10 +1,9 @@
 # ChaithawatPon skills
 
-Public agent skills for practical work. One repository. Each skill stays a
-complete installable package.
+Public agent skills for practical work. One repository. Each skill is a
+complete installable package under `skills/<category>/<name>/`.
 
-This is the career-facing catalog. Independent versioned repositories still
-exist for each skill's release history.
+This is the only public skill catalog. Install from here.
 
 ## Install
 
@@ -16,31 +15,55 @@ Or copy one package:
 
 ```bash
 git clone https://github.com/ChaithawatPon/skills.git
-cp -R skills/<name> ~/.claude/skills/<name>
+cp -R skills/<category>/<name> ~/.claude/skills/<name>
 ```
 
-## Skills
+## Selling
 
 | Skill | Outcome |
 |---|---|
-| [edit-video](skills/edit-video/SKILL.md) | Turns user-provided clips into a reviewed cut plan, preview, captions, and final render. |
-| [sell-to-facebook-marketplace](skills/sell-to-facebook-marketplace/SKILL.md) | Prepares Marketplace listings and seller workflows with explicit approval before public actions. |
-| [social-update](skills/social-update/SKILL.md) | Supports professional profiles, portfolio content, job research, and approval-gated outreach. |
-| [sumup](skills/sumup/SKILL.md) | Converts a completed work session into a durable summary and continuation handoff. |
-| [today-obsidian](skills/today-obsidian/SKILL.md) | Builds an idempotent daily cockpit from unfinished tasks and verified work evidence. |
+| [sell-to-facebook-marketplace](skills/selling/sell-to-facebook-marketplace/SKILL.md) | Marketplace listings and seller workflows with explicit approval before public actions. |
+| [sell-to-shopee](skills/selling/sell-to-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. Publish needs a fresh yes. |
+| [sell-to-thaimart](skills/selling/sell-to-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. Publish needs a fresh yes. |
+| [sell-to-tiktok-shop](skills/selling/sell-to-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
 
-Each package has its own README for requirements, environment variables,
-usage, approval gates, and troubleshooting.
+## University
+
+| Skill | Outcome |
+|---|---|
+| [n2n-assignment](skills/university/n2n-assignment/SKILL.md) | Routes scan, explain, or create. Front door for assignment work. |
+| [check-assignment](skills/university/check-assignment/SKILL.md) | Collects verified lecture files and assignment briefs from visible course sources. |
+| [do-assignment](skills/university/do-assignment/SKILL.md) | Builds a review-ready deliverable after an ideas interview and outline approval. |
+| [eli5-assignment](skills/university/eli5-assignment/SKILL.md) | Explains one verified brief as a simple visual HTML page. |
+| [doer-assignment](skills/university/doer-assignment/SKILL.md) | Compatibility alias for `n2n-assignment`. |
+
+## Daily
+
+| Skill | Outcome |
+|---|---|
+| [today-obsidian](skills/daily/today-obsidian/SKILL.md) | Builds an idempotent daily cockpit from unfinished tasks and verified work evidence. |
+| [sumup](skills/daily/sumup/SKILL.md) | Converts a completed session into a durable summary and continuation handoff. |
+
+## Career
+
+| Skill | Outcome |
+|---|---|
+| [social-update](skills/career/social-update/SKILL.md) | Professional profiles, portfolio content, job research, and approval-gated outreach. |
+
+## Media
+
+| Skill | Outcome |
+|---|---|
+| [edit-video](skills/media/edit-video/SKILL.md) | Turns user-provided clips into a reviewed cut plan, preview, captions, and final render. |
 
 ## Contract
 
 Every skill must provide:
 
 - a valid `SKILL.md`
-- complete installation and usage instructions
+- complete usage and approval gates
 - synthetic examples only; no personal or customer data
 - validation, plus runtime tests where the skill has runtime behavior
-- explicit privacy and approval boundaries
 
 ## CI
 
@@ -48,20 +71,8 @@ GitHub Actions runs `Validate skills` from `.github/workflows/validate.yml`.
 
 ## Privacy
 
-This repository contains public-safe skill source only. It does not contain
-browser state, credentials, local paths, private messages, inventory, or
-runtime output.
+Public-safe skill source only. No browser state, credentials, local home paths,
+private messages, inventory, or runtime output.
 
-## Versioned sources
-
-Current package trees were imported from:
-
-| Skill | Standalone repo | Imported `main` | Release |
-|---|---|---|---|
-| edit-video | [ChaithawatPon/edit-video](https://github.com/ChaithawatPon/edit-video) | `77218de` | v1.0.2 |
-| sell-to-facebook-marketplace | [ChaithawatPon/sell-to-facebook-marketplace](https://github.com/ChaithawatPon/sell-to-facebook-marketplace) | `b317582` | v1.1.2 |
-| social-update | [ChaithawatPon/social-update](https://github.com/ChaithawatPon/social-update) | `19686b2` | v1.0.1 |
-| sumup | [ChaithawatPon/sumup](https://github.com/ChaithawatPon/sumup) | `cfbc422` | v1.0.1 |
-| today-obsidian | [ChaithawatPon/today-obsidian](https://github.com/ChaithawatPon/today-obsidian) | `c45b07d` | v1.0.1 |
-
-See [SOURCE.md](SOURCE.md).
+Private school and shop setup stays in gitignored local config on the student's
+or seller's machine.

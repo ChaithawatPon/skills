@@ -5,26 +5,34 @@ cd "$ROOT"
 
 fail() { echo "FAIL: $*" >&2; exit 1; }
 
-packages=(edit-video sell-to-facebook-marketplace social-update sumup today-obsidian)
-for name in "${packages[@]}"; do
-  dir="$ROOT/skills/$name"
-  [ -f "$dir/SKILL.md" ] || fail "missing SKILL.md in $name"
-done
+count=0
+echo "packages:"
+while IFS= read -r skill_md; do
+  dir="$(dirname "$skill_md")"
+  rel="${dir#"$ROOT/"}"
+  echo "  $rel"
+  [ -f "$dir/SKILL.md" ] || fail "missing SKILL.md in $rel"
+  count=$((count + 1))
+done < <(find "$ROOT/skills" -mindepth 3 -maxdepth 3 -name SKILL.md -not -path '*/node_modules/*' | sort)
+[ "$count" -gt 0 ] || fail "no SKILL.md packages found"
 
-python3 "$ROOT/skills/edit-video/scripts/validate-skill.py" "$ROOT/skills/edit-video"
-python3 "$ROOT/skills/social-update/scripts/validate-skill.py" "$ROOT/skills/social-update"
-python3 "$ROOT/skills/sumup/scripts/validate-skill.py" "$ROOT/skills/sumup"
-python3 "$ROOT/skills/today-obsidian/scripts/validate-skill.py" "$ROOT/skills/today-obsidian"
-(cd "$ROOT/skills/today-obsidian/scripts" && python3 test_today_obsidian.py)
-
-if [ -f "$ROOT/skills/social-update/scripts/test_job_hunter.py" ]; then
-  python3 "$ROOT/skills/social-update/scripts/test_job_hunter.py"
+if git ls-files --error-unmatch '**/node_modules/**' >/dev/null 2>&1; then
+  fail "node_modules is tracked"
+fi
+if git ls-files --error-unmatch '**/state/**' >/dev/null 2>&1; then
+  fail "state/ is tracked"
 fi
 
-if [ -f "$ROOT/skills/edit-video/scripts/test_fixture_smoke.py" ]; then
-  python3 -m pip install -q -r "$ROOT/skills/edit-video/requirements.txt"
-  python3 "$ROOT/skills/edit-video/scripts/test_fixture_smoke.py"
-fi
+python3 "$ROOT/scripts/privacy_scan.py" "$ROOT"
 
-echo "validate.sh: structure and python checks passed"
+python3 "$ROOT/skills/media/edit-video/scripts/validate-skill.py" "$ROOT/skills/media/edit-video"
+python3 "$ROOT/skills/career/social-update/scripts/validate-skill.py" "$ROOT/skills/career/social-update"
+python3 "$ROOT/skills/daily/sumup/scripts/validate-skill.py" "$ROOT/skills/daily/sumup"
+python3 "$ROOT/skills/daily/today-obsidian/scripts/validate-skill.py" "$ROOT/skills/daily/today-obsidian"
+(cd "$ROOT/skills/daily/today-obsidian/scripts" && python3 test_today_obsidian.py)
+python3 "$ROOT/skills/career/social-update/scripts/test_job_hunter.py"
+python3 "$ROOT/skills/university/n2n-assignment/tests/test_skill_contracts.py"
+python3 "$ROOT/skills/university/doer-assignment/scripts/privacy_scan.py" "$ROOT/skills/university/doer-assignment"
+
+echo "validate.sh: structure, privacy, and python checks passed"
 echo "Marketplace npm tests run in CI"

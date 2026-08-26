@@ -1,0 +1,24 @@
+{
+  "student": {
+    "display_name": "Student Name",
+    "student_id": "STUDENT-ID",
+    "preferred_submission_email": "student@example.com"
+  },
+  "courses_root": "Courses",
+  "courses": [
+    {
+      "code": "COURSE101",
+      "name": "Course Name",
+      "folder": "COURSE101 - Course Name",
+      "notification_destination": "optional-private-destination-id"
+    }
+  ],
+  "notifications": {
+    "general_destination": "optional-private-general-destination-id",
+    "require_notification_after_scan": false
+  },
+  "local": {
+    "downloads_dir": "/path/outside/repo/downloads",
+    "output_dir": "/path/outside/repo/output"
+  }
+}
