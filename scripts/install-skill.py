@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Copy this skill package to an explicit, empty destination parent."""
+"""Copy one catalog package to an explicit, empty destination parent."""
 
 from __future__ import annotations
 
@@ -40,19 +40,32 @@ def install_dependencies(target: Path, npm_bin: str) -> None:
     subprocess.run(command, cwd=target, check=True, stdout=sys.stderr, stderr=sys.stderr)
 
 
+def find_packages(root: Path) -> dict[str, Path]:
+    skills_root = root / "skills"
+    packages: dict[str, Path] = {}
+    for skill_md in sorted(skills_root.glob("*/*/SKILL.md")):
+        package_dir = skill_md.parent
+        packages[package_dir.name] = package_dir
+    return packages
+
+
 def main(argv: list[str] | None = None) -> int:
+    default_root = Path(__file__).resolve().parents[1]
+    packages = find_packages(default_root)
+
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("skill", choices=["sell-to-facebook-marketplace"])
+    parser.add_argument("skill", choices=sorted(packages))
     parser.add_argument("--dest", required=True, type=Path, help="Existing destination directory")
     parser.add_argument("--npm-bin", help="npm executable to use for destination dependency install")
-    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--root", type=Path, default=default_root)
     args = parser.parse_args(argv)
 
     root = args.root.resolve()
-    source = (root / args.skill).resolve()
+    packages = find_packages(root)
+    source = packages.get(args.skill, Path()).resolve()
     destination_parent = args.dest.expanduser().resolve()
 
-    if not source.is_relative_to(root) or not (source / "SKILL.md").is_file():
+    if args.skill not in packages or not source.is_relative_to(root) or not (source / "SKILL.md").is_file():
         print("error: skill must be an installable package inside --root", file=sys.stderr)
         return 2
     if contains_symlink(source):
@@ -72,7 +85,8 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         shutil.copytree(source, temp_target, symlinks=False, ignore=ignore_runtime_dirs)
-        install_dependencies(temp_target, npm_bin)
+        if (temp_target / "package.json").is_file():
+            install_dependencies(temp_target, npm_bin)
         temp_target.replace(target)
     except (OSError, subprocess.CalledProcessError) as error:
         shutil.rmtree(temp_target, ignore_errors=True)

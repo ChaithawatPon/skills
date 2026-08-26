@@ -1,0 +1,13 @@
+{
+  "name": "chaithawatpon-skills",
+  "display_name": "ChaithawatPon Skills",
+  "summary": "A public catalog of approval-gated agent workflows for practical work.",
+  "categories": [
+    "productivity",
+    "automation",
+    "education",
+    "commerce",
+    "media"
+  ],
+  "repository": "https://github.com/ChaithawatPon/skills"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "name": "chaithawatpon-skills",
+  "display_name": "ChaithawatPon Skills",
+  "description": "Public-safe agent skills grouped by practical workflow.",
+  "version": "0.1.0",
+  "author": {
+    "name": "ChaithawatPon"
+  },
+  "repository": "https://github.com/ChaithawatPon/skills",
+  "skills": {
+    "path": "skills"
+  }
+}

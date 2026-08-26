@@ -1,0 +1,21 @@
+{
+  "name": "@chaithawatpon/skills",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Public agent skill catalog with installable packages grouped by workflow.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "list": "python3 scripts/list-skills.py",
+    "test": "bash scripts/validate.sh",
+    "validate": "bash scripts/validate.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaithawatPon/skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ChaithawatPon/skills/issues"
+  },
+  "homepage": "https://github.com/ChaithawatPon/skills#readme"
+}

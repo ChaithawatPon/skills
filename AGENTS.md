@@ -4,6 +4,8 @@ Public skill monorepo for `ChaithawatPon/skills`.
 
 - Each installable skill lives under `skills/<category>/<name>/` with its own `SKILL.md`.
 - Categories are `selling`, `university`, `daily`, `career`, and `media`.
+- Keep category folder names ASCII. Use playful Thai category names only in
+  README/docs display text.
 - Do not copy private skills, browser state, inventory, credentials, Discord
   channel IDs, student identifiers, or local runtime output into this repository.
 - This repository is the public installable catalog. Standalone skill
