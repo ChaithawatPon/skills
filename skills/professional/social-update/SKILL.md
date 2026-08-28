@@ -1,6 +1,6 @@
 ---
 name: social-update
-description: Manage an evidence-backed professional presence across LinkedIn, GitHub, X, Facebook, Instagram, freelance marketplaces, job search, recruiter email, public content, portfolio evidence, applications, and follow-ups. Use when the user invokes /social-update; requests a profile audit or edit, portfolio presentation, social post, job discovery or application, resume tailoring, recruiter outreach, opportunity reply, or private application ledger; or uses the former professional-presence, career-pilot, or job-hunter names.
+description: Manage an evidence-backed professional presence across LinkedIn, GitHub, X, Facebook, Instagram, YouTube, TikTok, freelance marketplaces, job search, recruiter email, public content, portfolio evidence, applications, and follow-ups. Use when the user invokes /social-update; requests a profile audit or edit, portfolio presentation, social post, job discovery or application, resume tailoring, recruiter outreach, opportunity reply, or private application ledger; or uses the former professional-presence, career-pilot, or job-hunter names.
 ---
 
 # Social Update
@@ -24,6 +24,8 @@ wording only, not separate skills.
   public profile, portfolio, or freelance listing.
 - Read [references/social-content.md](references/social-content.md) for a post,
   launch update, or public media asset.
+- Read [references/youtube-tiktok.md](references/youtube-tiktok.md) for a
+  YouTube Community post or TikTok photo/video post.
 
 ## Route the request
 
@@ -31,6 +33,8 @@ wording only, not separate skills.
   user-approved evidence, then show exact field replacements before an edit.
 - **Public content**: draft and privacy-review the complete post and assets;
   publishing remains a separate approval.
+- **YouTube and TikTok**: keep each platform in a separate same-day packet;
+  verify the signed-in account, final format, visibility, and direct public URL.
 - **Jobs and opportunities**: follow the research, review, application, ledger,
   outreach, and verification workflow below.
 - **Cross-platform audit**: separate findings and approval packets by platform;
