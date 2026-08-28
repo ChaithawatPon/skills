@@ -22,6 +22,10 @@ threads, public replies, or optional visual/video assets.
    and visibility in the final preview. Treat scheduling as a public mutation,
    verify the item in the platform's scheduled-content surface after reload,
    and verify the direct public URL after its publish time.
+   A complete campaign may use one batch packet per platform when that packet
+   lists every caption, asset, date, time, timezone, audience, and account.
+   Batch approval covers only those materially unchanged listed items; stop the
+   batch on the first warning, target drift, or unsupported date.
 7. When a requested platform cannot schedule the approved format, create a
    dated manual-post handoff task instead of changing the format or posting
    early.

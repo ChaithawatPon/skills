@@ -17,6 +17,9 @@ Use this module for YouTube Community posts and TikTok photo or video posts.
 
 ## Campaign scheduling
 
+- A complete campaign may use one batch packet per platform when every post,
+  asset, date, time, timezone, audience, and target account appears in the
+  packet. Approval for the YouTube batch never covers TikTok, and vice versa.
 - YouTube: schedule the approved Community image post when the composer exposes
   a native schedule control. Verify it under the channel's Scheduled tab.
 - TikTok: schedule the approved photo post in TikTok Studio. Confirm the shown
