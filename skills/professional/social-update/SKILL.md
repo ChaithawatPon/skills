@@ -32,9 +32,10 @@ wording only, not separate skills.
 - **Profiles and portfolio**: audit read-only, ground every claim in public or
   user-approved evidence, then show exact field replacements before an edit.
 - **Public content**: draft and privacy-review the complete post and assets;
-  publishing remains a separate approval.
+  publishing and native scheduling each remain separate platform approvals.
 - **YouTube and TikTok**: keep each platform in a separate same-day packet;
-  verify the signed-in account, final format, visibility, and direct public URL.
+  verify the signed-in account, final format, visibility, scheduled-content
+  state when used, and direct public URL after publication.
 - **Jobs and opportunities**: follow the research, review, application, ledger,
   outreach, and verification workflow below.
 - **Cross-platform audit**: separate findings and approval packets by platform;

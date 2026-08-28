@@ -15,8 +15,17 @@ threads, public replies, or optional visual/video assets.
    cutting/export to an installed `edit-video` skill; editing never grants
    publishing authority.
 5. Show the full target, text, assets, link, visibility, warnings, and
-   post-publish verification plan. Publish only after exact approval.
-6. Reload the direct public URL and compare content, assets, account, and
+   post-publish verification plan. Publishing or scheduling requires exact
+   approval for that platform and materially unchanged post.
+6. When the user requests a campaign schedule, use the platform's native
+   scheduler only when it exposes the requested date, time, timezone, format,
+   and visibility in the final preview. Treat scheduling as a public mutation,
+   verify the item in the platform's scheduled-content surface after reload,
+   and verify the direct public URL after its publish time.
+7. When a requested platform cannot schedule the approved format, create a
+   dated manual-post handoff task instead of changing the format or posting
+   early.
+8. Reload the direct public URL and compare content, assets, account, and
    visibility. A click or toast is not proof.
 
 Never mine DMs, emails, or private conversations to imitate the user's voice.
