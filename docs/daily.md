@@ -1,8 +1,15 @@
 # สมองสำรอง
 
-Daily note and handoff workflows for keeping work visible across sessions.
+Daily planning, personal research, privacy, and Mac-maintenance workflows.
 
 Packages:
 
 - `today-obsidian`
-- `sumup`
+- `clean-mac-storage`
+- `mac-health`
+- `clean-digital-footprint`
+- `find-room`
+- `find-item`
+- `find-sell-spont`
+- `find-place-to-eat`
+- `transaction`

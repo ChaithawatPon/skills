@@ -52,8 +52,8 @@ names can have more personality.
 |---|---|---|
 | `selling` | ของต้องขาย | Seller workflows for moving real items through real marketplaces. |
 | `university` | งานส่งอาจารย์ | School workflows that start from verified assignment evidence. |
-| `daily` | สมองสำรอง | Daily notes, summaries, and handoffs so work does not disappear. |
-| `career` | หน้าโปรต้องรอด | Public profile, portfolio, and opportunity workflows with approval gates. |
+| `daily` | สมองสำรอง | Personal planning, research, privacy, finance, and Mac-maintenance workflows. |
+| `professional` | มืออาชีพ | Public profile, portfolio, and opportunity workflows with approval gates. |
 | `media` | ตัดให้จบ | Video/media workflow support from rough input to reviewed output. |
 
 ## ของต้องขาย
@@ -71,11 +71,10 @@ See [docs/selling.md](docs/selling.md).
 
 | Skill | Outcome |
 |---|---|
-| [n2n-assignment](skills/university/n2n-assignment/SKILL.md) | Routes scan, explain, or create. Front door for assignment work. |
 | [check-assignment](skills/university/check-assignment/SKILL.md) | Collects verified lecture files and assignment briefs from visible course sources. |
+| [get-file-from-assignment](skills/university/get-file-from-assignment/SKILL.md) | Retrieves and verifies files for one course, deduplicates them, and saves them to configured destinations. |
 | [do-assignment](skills/university/do-assignment/SKILL.md) | Builds a review-ready deliverable after an ideas interview and outline approval. |
 | [eli5-assignment](skills/university/eli5-assignment/SKILL.md) | Explains one verified brief as a simple visual HTML page. |
-| [doer-assignment](skills/university/doer-assignment/SKILL.md) | Compatibility alias for `n2n-assignment`. |
 
 See [docs/university.md](docs/university.md).
 
@@ -84,17 +83,24 @@ See [docs/university.md](docs/university.md).
 | Skill | Outcome |
 |---|---|
 | [today-obsidian](skills/daily/today-obsidian/SKILL.md) | Builds an idempotent daily cockpit from unfinished tasks and verified work evidence. |
-| [sumup](skills/daily/sumup/SKILL.md) | Converts a completed session into a durable summary and continuation handoff. |
+| [clean-mac-storage](skills/daily/clean-mac-storage/SKILL.md) | Audits Mac storage and cleans only exact, approved targets. |
+| [mac-health](skills/daily/mac-health/SKILL.md) | Routes storage, privacy, or combined personal-maintenance audits. |
+| [clean-digital-footprint](skills/daily/clean-digital-footprint/SKILL.md) | Inventories social activity and deletes only approved items. |
+| [find-room](skills/daily/find-room/SKILL.md) | Finds current rentals with verified price, commute, and approval-gated outreach. |
+| [find-item](skills/daily/find-item/SKILL.md) | Compares current products or second-hand listings using direct evidence. |
+| [find-sell-spont](skills/daily/find-sell-spont/SKILL.md) | Finds short-term preloved-item stalls and verifies fees and seller eligibility. |
+| [find-place-to-eat](skills/daily/find-place-to-eat/SKILL.md) | Finds current places to eat using branch, menu, hours, price, and review evidence. |
+| [transaction](skills/daily/transaction/SKILL.md) | Uses an optional account-free spreadsheet template or builds a Google Sheets tracker from zero, then adds confirmed entries. |
 
 See [docs/daily.md](docs/daily.md).
 
-## หน้าโปรต้องรอด
+## มืออาชีพ
 
 | Skill | Outcome |
 |---|---|
-| [social-update](skills/career/social-update/SKILL.md) | Professional profiles, portfolio content, job research, and approval-gated outreach. |
+| [social-update](skills/professional/social-update/SKILL.md) | Professional profiles, portfolio content, job research, and approval-gated outreach. |
 
-See [docs/career.md](docs/career.md).
+See [docs/professional.md](docs/professional.md).
 
 ## ตัดให้จบ
 

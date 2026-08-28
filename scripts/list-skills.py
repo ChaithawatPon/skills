@@ -10,7 +10,7 @@ DISPLAY_NAMES = {
     "selling": "ของต้องขาย",
     "university": "งานส่งอาจารย์",
     "daily": "สมองสำรอง",
-    "career": "หน้าโปรต้องรอด",
+    "professional": "มืออาชีพ",
     "media": "ตัดให้จบ",
 }
 

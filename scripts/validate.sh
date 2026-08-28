@@ -26,13 +26,12 @@ fi
 python3 "$ROOT/scripts/privacy_scan.py" "$ROOT"
 
 python3 "$ROOT/skills/media/edit-video/scripts/validate-skill.py" "$ROOT/skills/media/edit-video"
-python3 "$ROOT/skills/career/social-update/scripts/validate-skill.py" "$ROOT/skills/career/social-update"
-python3 "$ROOT/skills/daily/sumup/scripts/validate-skill.py" "$ROOT/skills/daily/sumup"
+python3 "$ROOT/skills/professional/social-update/scripts/validate-skill.py" "$ROOT/skills/professional/social-update"
 python3 "$ROOT/skills/daily/today-obsidian/scripts/validate-skill.py" "$ROOT/skills/daily/today-obsidian"
 (cd "$ROOT/skills/daily/today-obsidian/scripts" && python3 test_today_obsidian.py)
-python3 "$ROOT/skills/career/social-update/scripts/test_job_hunter.py"
-python3 "$ROOT/skills/university/n2n-assignment/tests/test_skill_contracts.py"
-python3 "$ROOT/skills/university/doer-assignment/scripts/privacy_scan.py" "$ROOT/skills/university/doer-assignment"
+python3 "$ROOT/skills/professional/social-update/scripts/test_job_hunter.py"
+python3 "$ROOT/skills/daily/mac-health/tests/test_route.py"
+node --check < "$ROOT/skills/daily/transaction/assets/google-apps-script/Code.gs"
 
-echo "validate.sh: structure, privacy, and python checks passed"
+echo "validate.sh: structure, privacy, Python, and JavaScript checks passed"
 echo "Marketplace npm tests run in CI"

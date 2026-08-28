@@ -5,8 +5,7 @@ or drafting work.
 
 Packages:
 
-- `n2n-assignment`
 - `check-assignment`
+- `get-file-from-assignment`
 - `do-assignment`
 - `eli5-assignment`
-- `doer-assignment`

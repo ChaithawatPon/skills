@@ -83,8 +83,8 @@ written. Plus an optional secondary `$OBSIDIAN_VAULT/Personal/daily/DD-mm-yyyy-<
 11. **A second, optional output — the "fix log" — exists alongside the daily cockpit note**
     (added 20-07-2026, mirrors `Personal/Follow up miss task.md`'s shape). It is NOT a
     replacement for `Personal/daily/DD-MM-YYYY.md` — that filename and its 5-source machinery
-    stay exactly as-is (decisions 1–9 all still apply; other skills — `fixbill`, `sumup` —
-    depend on that exact filename). The fix log is a separate, explicitly-requested artifact
+    stay exactly as-is (decisions 1–9 all still apply; other local workflows may depend on
+    that exact filename). The fix log is a separate, explicitly-requested artifact
     for when the user wants a running "what got fixed on `<topic>`" log in the nested-checklist
     style, not the structured-metadata style. See Step 2g. **Open ambiguity, flagged not
     guessed:** what exactly fills `<topic>` when the run touches several projects, and whether

@@ -7,5 +7,5 @@ These pages explain the catalog by workflow category.
 | `selling` | ของต้องขาย | [selling](selling.md) |
 | `university` | งานส่งอาจารย์ | [university](university.md) |
 | `daily` | สมองสำรอง | [daily](daily.md) |
-| `career` | หน้าโปรต้องรอด | [career](career.md) |
+| `professional` | มืออาชีพ | [professional](professional.md) |
 | `media` | ตัดให้จบ | [media](media.md) |
