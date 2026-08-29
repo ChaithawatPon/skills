@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fastwork Service Poster"
+  short_description: "Draft and approval-gate Fastwork service listings"
+  default_prompt: "Use $post-service-on-fastwork to turn my confirmed capability into a Thai Fastwork service listing and stop for approval before saving or publishing."

@@ -18,6 +18,8 @@
     "inventory:self-test": "node scripts/facebook_marketplace_inventory.mjs --self-test",
     "maintenance": "node scripts/facebook_marketplace_maintenance.mjs",
     "maintenance:self-test": "node scripts/facebook_marketplace_maintenance.mjs --self-test",
+    "group-thread": "node scripts/facebook_group_sale_thread_packet.mjs",
+    "group-thread:self-test": "node scripts/facebook_group_sale_thread_packet.mjs --self-test",
     "autopilot:self-test": "node scripts/facebook_marketplace_autopilot.mjs --self-test",
     "draft:self-test": "node scripts/facebook_marketplace_draft.mjs --self-test",
     "publish:self-test": "node scripts/facebook_marketplace_publish.mjs --self-test",

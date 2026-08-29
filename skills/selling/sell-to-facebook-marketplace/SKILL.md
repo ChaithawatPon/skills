@@ -5,7 +5,8 @@ description: Create, update, and manage Facebook Marketplace seller item listing
 
 # Sell to Facebook Marketplace
 
-Seller-side Facebook Marketplace automation with a hard publish gate.
+Seller-side Facebook Marketplace automation with hard publish and group-post
+gates.
 
 The package supports four main modes:
 
@@ -13,6 +14,8 @@ The package supports four main modes:
 2. Scan or auto-handle seller inbox threads when the latest buyer message can be answered safely from visible evidence.
 3. Audit active listings for low engagement and write a relisting review plan.
 4. Prepare and approval-gate one exact stale-listing update, delete, or Facebook `Delete & relist` action from a validated maintenance packet, then verify the manually applied result.
+5. Prepare a public Facebook Group moving-room sale thread: a red-background
+   announcement followed by one verified live item per comment.
 
 ## Safety model
 
@@ -93,6 +96,32 @@ Use selling-page audit mode for active listings.
 5. Otherwise recommend `refresh_content_review` with title, keyword, and lead-photo improvements.
 6. Write the plan to local `output/` for later manual action. A candidate with a missing or ambiguous listing identity is not maintenance-eligible.
 
+## Group moving-room sale thread
+
+Use this only when Pon explicitly asks to share existing Marketplace inventory
+in a named Facebook Group. Read
+[references/group-sale-thread.md](references/group-sale-thread.md) before
+opening Facebook.
+
+The announcement is a normal group post, not a Marketplace or `Sell Something`
+composer. Its approved Thai headline is `ขายของย้ายหอ`, using Facebook's red
+text background. Each item is then a separate comment under that announcement:
+the clearest truthful item photo and its verified Marketplace price. Do not
+invent titles, prices, condition, included parts, or availability.
+
+Build the review packet with:
+
+```bash
+node scripts/facebook_group_sale_thread_packet.mjs \
+  --inventory-dir <marketplace-inventory/items> \
+  --photo-root <marketplace-inventory/photos> \
+  --group-id <group-id> \
+  --group-name <group-name>
+```
+
+The helper only produces a local packet. Posting requires the fresh exact
+approval syntax and all live verification described in the reference.
+
 ## Stale-listing maintenance
 
 Use maintenance mode only after reviewing the inventory plan and agreeing on one exact listing and action.
@@ -140,6 +169,9 @@ node scripts/facebook_marketplace_inventory.mjs --scan
 # Run one preview/approval/manual-action/reload-verification session (the tool does not click)
 node scripts/facebook_marketplace_maintenance.mjs --packet references/maintenance_packet.example.json
 
+# Prepare one approval-gated Facebook Group sale-thread packet
+node scripts/facebook_group_sale_thread_packet.mjs --inventory <verified-inventory.json> --group-id <group-id> --group-name <group-name>
+
 # Run package self-tests
 npm test
 ```
@@ -163,4 +195,6 @@ sell-to-facebook-marketplace/
 - The packaged maintenance command is preview-only and contains no public-action click path.
 - No bulk maintenance, unstable listing identity, saved approval, or success without post-action reload verification.
 - No auto-negotiation, holds, reservations, status changes, or guessed item facts.
+- Group sale threads never join groups, never use `Sell Something`, and never
+  repost an item without a fresh exact group packet approval.
 - No committed browser state, cookies, screenshots, message logs, or real listing data.

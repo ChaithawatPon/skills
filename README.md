@@ -64,6 +64,7 @@ names can have more personality.
 | [sell-to-shopee](skills/selling/sell-to-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. Publish needs a fresh yes. |
 | [sell-to-thaimart](skills/selling/sell-to-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. Publish needs a fresh yes. |
 | [sell-to-tiktok-shop](skills/selling/sell-to-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
+| [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork service listings with offer sharpening, live-form review, and approval-gated save or publish. |
 
 See [docs/selling.md](docs/selling.md).
 

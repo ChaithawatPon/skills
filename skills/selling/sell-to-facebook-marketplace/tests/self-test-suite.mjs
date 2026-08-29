@@ -12,6 +12,7 @@ const scripts = [
   ['scripts/facebook_marketplace_inventory.mjs', '--self-test'],
   ['scripts/facebook_marketplace_maintenance.mjs', '--self-test'],
   ['scripts/facebook_marketplace_autopilot.mjs', '--self-test'],
+  ['scripts/facebook_group_sale_thread_packet.mjs', '--self-test'],
 ]
 
 for (const args of scripts) {

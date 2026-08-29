@@ -9,3 +9,4 @@ Packages:
 - `sell-to-shopee`
 - `sell-to-thaimart`
 - `sell-to-tiktok-shop`
+- `post-service-on-fastwork`
