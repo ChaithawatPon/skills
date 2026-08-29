@@ -1,14 +1,19 @@
 {
-  "schema_version": "1.0.0",
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "chaithawatpon-skills",
-  "display_name": "ChaithawatPon Skills",
+  "displayName": "ChaithawatPon Skills",
   "description": "Public-safe agent skills grouped by practical workflow.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "ChaithawatPon"
   },
+  "homepage": "https://github.com/ChaithawatPon/skills#readme",
   "repository": "https://github.com/ChaithawatPon/skills",
-  "skills": {
-    "path": "skills"
-  }
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "workflow",
+    "productivity"
+  ],
+  "skills": "./skills/"
 }

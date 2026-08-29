@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1 — 2026-08-29
+
+- Add an explicit npm package allowlist so operational notes, CI metadata, and
+  out-of-scope documents cannot be included in future package tarballs.
+
 ## 0.1.0 — 2026-08-29
 
 - Add Matt-style repository structure notes, plugin metadata, out-of-scope
