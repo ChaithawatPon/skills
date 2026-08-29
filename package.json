@@ -1,6 +1,6 @@
 {
   "name": "@chaithawatpon/skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Public agent skill catalog with installable packages grouped by workflow.",
   "license": "MIT",
@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/ChaithawatPon/skills/issues"
   },
-  "homepage": "https://github.com/ChaithawatPon/skills#readme"
+  "homepage": "https://github.com/ChaithawatPon/skills#readme",
+  "files": [
+    "skills/",
+    "scripts/",
+    "docs/",
+    ".claude-plugin/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ]
 }

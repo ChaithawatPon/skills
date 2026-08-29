@@ -1,133 +1,141 @@
 # ChaithawatPon Skills
 
-Public agent skills for practical work. One catalog, grouped by workflow.
-Each skill is a complete installable package under
-`skills/<category>/<name>/`.
+Public, reusable agent skills for practical work. Each skill is a small package
+with clear instructions, safety checks, and approval gates for public actions.
 
-This is the public install source for Pon's reusable skills.
+## What you get
 
-## Repo map
+- A catalog of skills for selling, university work, daily tasks, professional
+  profiles, and media.
+- Public-safe source only: no credentials, browser sessions, private messages,
+  personal files, or real customer data.
+- A Claude Code plugin that points to `skills/`.
 
-| Path | Purpose |
-|---|---|
-| `.agents/` | Agent-facing notes and repo decisions. |
-| `.claude-plugin/` | Plugin metadata for catalog distribution. |
-| `.github/workflows/` | CI validation for every package. |
-| `.out-of-scope/` | Boundaries for what this public catalog will not ship. |
-| `docs/` | Human-readable category pages. |
-| `scripts/` | Local catalog tools. |
-| `skills/` | Installable skill packages. |
+## How a skill works
+
+```mermaid
+flowchart LR
+    A[Choose a skill] --> B[Collect verified facts]
+    B --> C[Prepare a draft or result]
+    C --> D{Would this be public or irreversible?}
+    D -- Yes --> E[Ask for fresh approval]
+    D -- No --> F[Deliver a verified result]
+    E --> F
+```
+
+In short: the skill checks facts first. It asks before posting, publishing,
+sending, buying, or deleting. Then it reports what actually happened.
 
 ## Install
+
+Install the catalog with a skills-compatible agent:
 
 ```bash
 npx skills add ChaithawatPon/skills
 ```
 
-Or copy one package:
+Or install one skill manually:
 
 ```bash
 git clone https://github.com/ChaithawatPon/skills.git
 cp -R skills/<category>/<name> ~/.claude/skills/<name>
 ```
 
-List packages:
+To use the Claude Code marketplace, add it in Claude Code:
 
 ```bash
-npm run list
+claude plugin marketplace add ChaithawatPon/skills
+claude plugin install chaithawatpon-skills@chaithawatpon-skills
 ```
 
-Validate the catalog:
+## Use a skill
 
-```bash
-npm test
-```
+1. Choose a category below.
+2. Open the skill's `SKILL.md` file.
+3. Give the agent the task in normal language.
+4. Review any draft or approval request before a public action.
 
 ## Categories
 
-Folder names stay plain ASCII so install tools and shells behave. The display
-names can have more personality.
+| Folder | Use it for |
+|---|---|
+| `selling` | Marketplace listings, seller tools, and service offers. |
+| `university` | Verified assignment briefs, files, and review-ready work. |
+| `daily` | Planning, privacy, finance, research, and Mac maintenance. |
+| `professional` | Public profiles, portfolios, and opportunities. |
+| `media` | Video and media work from rough input to reviewed output. |
 
-| Folder | Display name | What it means |
-|---|---|---|
-| `selling` | ของต้องขาย | Seller workflows for moving real items through real marketplaces. |
-| `university` | งานส่งอาจารย์ | School workflows that start from verified assignment evidence. |
-| `daily` | สมองสำรอง | Personal planning, research, privacy, finance, and Mac-maintenance workflows. |
-| `professional` | มืออาชีพ | Public profile, portfolio, and opportunity workflows with approval gates. |
-| `media` | ตัดให้จบ | Video/media workflow support from rough input to reviewed output. |
-
-## ของต้องขาย
+## Selling
 
 | Skill | Outcome |
 |---|---|
-| [sell-to-facebook-marketplace](skills/selling/sell-to-facebook-marketplace/SKILL.md) | Marketplace listings and seller workflows with explicit approval before public actions. |
-| [sell-to-shopee](skills/selling/sell-to-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. Publish needs a fresh yes. |
-| [sell-to-thaimart](skills/selling/sell-to-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. Publish needs a fresh yes. |
+| [sell-to-facebook-marketplace](skills/selling/sell-to-facebook-marketplace/SKILL.md) | Marketplace listings and seller workflows with approval before public actions. |
+| [sell-to-shopee](skills/selling/sell-to-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. |
+| [sell-to-thaimart](skills/selling/sell-to-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. |
 | [sell-to-tiktok-shop](skills/selling/sell-to-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
-| [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork service listings with offer sharpening, live-form review, and approval-gated save or publish. |
+| [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork service listings with review before save or publish. |
 
-See [docs/selling.md](docs/selling.md).
+See [selling details](docs/selling.md).
 
-## งานส่งอาจารย์
+## University
 
 | Skill | Outcome |
 |---|---|
 | [check-assignment](skills/university/check-assignment/SKILL.md) | Collects verified lecture files and assignment briefs from visible course sources. |
-| [get-file-from-assignment](skills/university/get-file-from-assignment/SKILL.md) | Retrieves and verifies files for one course, deduplicates them, and saves them to configured destinations. |
+| [get-file-from-assignment](skills/university/get-file-from-assignment/SKILL.md) | Retrieves and verifies files for one course, then saves them to configured destinations. |
 | [do-assignment](skills/university/do-assignment/SKILL.md) | Builds a review-ready deliverable after an ideas interview and outline approval. |
 | [eli5-assignment](skills/university/eli5-assignment/SKILL.md) | Explains one verified brief as a simple visual HTML page. |
 
-See [docs/university.md](docs/university.md).
+See [university details](docs/university.md).
 
-## สมองสำรอง
+## Daily
 
 | Skill | Outcome |
 |---|---|
-| [today-obsidian](skills/daily/today-obsidian/SKILL.md) | Builds an idempotent daily cockpit from unfinished tasks and verified work evidence. |
+| [today-obsidian](skills/daily/today-obsidian/SKILL.md) | Builds a daily cockpit from unfinished tasks and verified work evidence. |
 | [clean-mac-storage](skills/daily/clean-mac-storage/SKILL.md) | Audits Mac storage and cleans only exact, approved targets. |
 | [mac-health](skills/daily/mac-health/SKILL.md) | Routes storage, privacy, or combined personal-maintenance audits. |
 | [clean-digital-footprint](skills/daily/clean-digital-footprint/SKILL.md) | Inventories social activity and deletes only approved items. |
 | [find-room](skills/daily/find-room/SKILL.md) | Finds current rentals with verified price, commute, and approval-gated outreach. |
 | [find-item](skills/daily/find-item/SKILL.md) | Compares current products or second-hand listings using direct evidence. |
 | [find-sell-spont](skills/daily/find-sell-spont/SKILL.md) | Finds short-term preloved-item stalls and verifies fees and seller eligibility. |
-| [find-place-to-eat](skills/daily/find-place-to-eat/SKILL.md) | Finds current places to eat using branch, menu, hours, price, and review evidence. |
-| [transaction](skills/daily/transaction/SKILL.md) | Uses an optional account-free spreadsheet template or builds a Google Sheets tracker from zero, then adds confirmed entries. |
+| [find-place-to-eat](skills/daily/find-place-to-eat/SKILL.md) | Finds places to eat using branch, menu, hours, price, and review evidence. |
+| [transaction](skills/daily/transaction/SKILL.md) | Adds confirmed entries to an optional spreadsheet template or new tracker. |
 
-See [docs/daily.md](docs/daily.md).
+See [daily details](docs/daily.md).
 
-## มืออาชีพ
+## Professional
 
 | Skill | Outcome |
 |---|---|
 | [social-update](skills/professional/social-update/SKILL.md) | Professional profiles, portfolio content, job research, and approval-gated outreach. |
 
-See [docs/professional.md](docs/professional.md).
+See [professional details](docs/professional.md).
 
-## ตัดให้จบ
+## Media
 
 | Skill | Outcome |
 |---|---|
 | [edit-video](skills/media/edit-video/SKILL.md) | Turns user-provided clips into a reviewed cut plan, preview, captions, and final render. |
 
-See [docs/media.md](docs/media.md).
+See [media details](docs/media.md).
 
-## Contract
+## Develop and verify
 
-Every skill must provide:
+```bash
+npm run list
+npm test
+```
 
-- a valid `SKILL.md`;
-- complete usage and approval gates;
-- synthetic examples only; no personal or customer data;
-- validation, plus runtime tests where the skill has runtime behavior.
+Each package needs a valid `SKILL.md`, clear usage and approval gates, synthetic
+examples only, and validation plus runtime tests where needed.
 
-## CI
+## Repository map
 
-GitHub Actions runs `Validate skills` from `.github/workflows/validate.yml`.
-
-## Privacy
-
-Public-safe skill source only. No browser state, credentials, local home paths,
-private messages, inventory, or runtime output.
-
-Private school and shop setup stays in gitignored local config on the student's
-or seller's machine.
+| Path | Purpose |
+|---|---|
+| `.claude-plugin/` | Claude Code marketplace and plugin metadata. |
+| `.github/workflows/` | Catalog validation in GitHub Actions. |
+| `docs/` | Short category guides. |
+| `scripts/` | Local catalog tools and validation. |
+| `skills/` | Installable skill packages. |
