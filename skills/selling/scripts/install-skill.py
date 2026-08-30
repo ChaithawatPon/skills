@@ -42,7 +42,7 @@ def install_dependencies(target: Path, npm_bin: str) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("skill", choices=["sell-to-facebook"])
+    parser.add_argument("skill", choices=["sell-on-facebook"])
     parser.add_argument("--dest", required=True, type=Path, help="Existing destination directory")
     parser.add_argument("--npm-bin", help="npm executable to use for destination dependency install")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])

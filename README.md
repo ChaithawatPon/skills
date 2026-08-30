@@ -69,10 +69,10 @@ claude plugin install chaithawatpon-skills@chaithawatpon-skills
 
 | Skill | Outcome |
 |---|---|
-| [sell-to-facebook](skills/selling/sell-to-facebook/SKILL.md) | Marketplace listings and seller workflows with approval before public actions. |
-| [sell-to-shopee](skills/selling/sell-to-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. |
-| [sell-to-thaimart](skills/selling/sell-to-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. |
-| [sell-to-tiktok-shop](skills/selling/sell-to-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
+| [sell-on-facebook](skills/selling/sell-on-facebook/SKILL.md) | Marketplace listings and seller workflows with approval before public actions. |
+| [sell-on-shopee](skills/selling/sell-on-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. |
+| [sell-on-thaimart](skills/selling/sell-on-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. |
+| [sell-on-tiktok-shop](skills/selling/sell-on-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
 | [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork service listings with review before save or publish. |
 
 See [selling details](docs/selling.md).

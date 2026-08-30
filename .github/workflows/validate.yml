@@ -20,12 +20,12 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-          cache-dependency-path: skills/selling/sell-to-facebook/package-lock.json
+          cache-dependency-path: skills/selling/sell-on-facebook/package-lock.json
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: bash scripts/validate.sh
       - run: python3 -m pip install -r skills/media/edit-video/requirements.txt
       - run: python3 skills/media/edit-video/scripts/test_fixture_smoke.py
       - run: npm ci
-        working-directory: skills/selling/sell-to-facebook
+        working-directory: skills/selling/sell-on-facebook
       - run: npm test
-        working-directory: skills/selling/sell-to-facebook
+        working-directory: skills/selling/sell-on-facebook

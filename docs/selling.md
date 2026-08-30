@@ -5,8 +5,8 @@ keeping public actions behind explicit approval gates.
 
 Packages:
 
-- `sell-to-facebook`
-- `sell-to-shopee`
-- `sell-to-thaimart`
-- `sell-to-tiktok-shop`
+- `sell-on-facebook`
+- `sell-on-shopee`
+- `sell-on-thaimart`
+- `sell-on-tiktok-shop`
 - `post-service-on-fastwork`
