@@ -11,10 +11,12 @@ Use one of two modes: `setup` creates the tracker structure; `entry` previews an
 
 Optional fast path: copy [transaction-tracker-template.xlsx](assets/transaction-tracker-template.xlsx). It contains no transaction history or account metadata and can be opened locally or imported into a spreadsheet service. Let the user choose and configure their own spreadsheet environment. Use the builder below when the user prefers to construct a Google Sheets workbook from zero.
 
+For a read-only preview before setup, open [cashflow-sankey-prototype.html](prototypes/cashflow-sankey-prototype.html). It is a standalone local dashboard with synthetic dates, amounts, categories, and account names. Keep prototypes and fixtures limited to labels such as `Income Source 1`, `Category 1`, and `Account 1`; user names, account labels, balances, IDs, and transaction history stay outside this public package.
+
 Read [references/build-google-sheet.md](references/build-google-sheet.md). The bundled [Apps Script builder](assets/google-apps-script/Code.gs) creates or repairs these tabs without deleting compatible transaction rows:
 
-- `Mobile Entry` for date, type, category, amount, note, and an Add Row checkbox;
-- `All Transactions` for the append-only ledger;
+- `Mobile Entry` for date, type, category, amount, note, optional bill URL, and an Add Row checkbox;
+- `All Transactions` for the append-only ledger, including an optional `Bill URL` column;
 - `Lists` for editable expense, income, and transfer categories;
 - `Summary` for totals and expense-by-category reporting.
 

@@ -3,7 +3,7 @@ const TRACKER = Object.freeze({
   ledger: 'All Transactions',
   lists: 'Lists',
   summary: 'Summary',
-  headers: ['Date', 'Type', 'Category', 'Amount', 'Note', 'Source', 'Check'],
+  headers: ['Date', 'Type', 'Category', 'Amount', 'Note', 'Source', 'Check', 'Bill URL'],
   types: ['Expense', 'Income', 'Transfer'],
 });
 
@@ -38,7 +38,7 @@ function onEdit(event) {
     applyCategoryValidation_(sheet, SpreadsheetApp.getActiveSpreadsheet().getSheetByName(TRACKER.lists));
     return;
   }
-  if (event.range.getA1Notation() === 'B12' && event.value === 'TRUE') {
+  if (event.range.getA1Notation() === 'B13' && event.value === 'TRUE') {
     submitEntry_(SpreadsheetApp.getActiveSpreadsheet());
   }
 }
@@ -69,8 +69,8 @@ function setupLists_(sheet) {
 
 function setupMobile_(sheet, lists) {
   sheet.getRange('A1:B1').merge().setValue('Mobile Entry').setFontSize(16).setFontWeight('bold').setBackground('#f3f3f3');
-  sheet.getRange('A3:A7').setValues([['Date'], ['Type'], ['Category'], ['Amount'], ['Note']]).setFontWeight('bold');
-  sheet.getRange('A12').setValue('Add Row').setFontWeight('bold');
+  sheet.getRange('A3:A8').setValues([['Date'], ['Type'], ['Category'], ['Amount'], ['Note'], ['Bill URL']]).setFontWeight('bold');
+  sheet.getRange('A13').setValue('Add Row').setFontWeight('bold');
 
   const dateCell = sheet.getRange('B3');
   if (dateCell.isBlank()) dateCell.setValue(new Date());
@@ -83,7 +83,7 @@ function setupMobile_(sheet, lists) {
   sheet.getRange('B6').setNumberFormat('#,##0.00;[Red](#,##0.00)').setDataValidation(
     SpreadsheetApp.newDataValidation().requireNumberNotEqualTo(0).setAllowInvalid(false).build()
   );
-  sheet.getRange('B12').insertCheckboxes().setValue(false);
+  sheet.getRange('B13').insertCheckboxes().setValue(false);
   applyCategoryValidation_(sheet, lists);
   sheet.setColumnWidth(1, 130);
   sheet.setColumnWidth(2, 260);
@@ -105,7 +105,7 @@ function setupLedger_(sheet) {
   sheet.getRange('A2:A').setNumberFormat('dd/mm/yyyy');
   sheet.getRange('D2:D').setNumberFormat('#,##0.00;[Red](#,##0.00)');
 
-  const range = sheet.getRange('A2:G');
+  const range = sheet.getRange('A2:H');
   sheet.setConditionalFormatRules([
     SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=$B2="Income"').setBackground('#d9ead3').setRanges([range]).build(),
     SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied('=$B2="Expense"').setBackground('#f4cccc').setRanges([range]).build(),
@@ -137,12 +137,13 @@ function applyCategoryValidation_(mobile, lists) {
 function submitEntry_(spreadsheet) {
   const mobile = spreadsheet.getSheetByName(TRACKER.mobile);
   const ledger = spreadsheet.getSheetByName(TRACKER.ledger);
-  const values = mobile.getRange('B3:B7').getValues().flat();
-  const [dateValue, typeValue, categoryValue, amountValue, noteValue] = values;
+  const values = mobile.getRange('B3:B8').getValues().flat();
+  const [dateValue, typeValue, categoryValue, amountValue, noteValue, billUrlValue] = values;
   const type = String(typeValue || '').trim();
   const category = String(categoryValue || '').trim();
   const amount = Number(amountValue);
   const note = String(noteValue || '').trim().replace(/\s+/g, ' ');
+  const billUrl = String(billUrlValue || '').trim();
 
   if (!(dateValue instanceof Date) || Number.isNaN(dateValue.getTime())) return rejectEntry_(spreadsheet, mobile, 'Enter a valid date.');
   if (!TRACKER.types.includes(type)) return rejectEntry_(spreadsheet, mobile, 'Choose a valid transaction type.');
@@ -154,12 +155,12 @@ function submitEntry_(spreadsheet) {
     return rejectEntry_(spreadsheet, mobile, 'Exact duplicate rejected.');
   }
 
-  ledger.appendRow([dateValue, type, category, amount, note, 'Mobile Entry', 'Added']);
+  ledger.appendRow([dateValue, type, category, amount, note, 'Mobile Entry', 'Added', billUrl]);
   const row = ledger.getLastRow();
   ledger.getRange(row, 1).setNumberFormat('dd/mm/yyyy');
   ledger.getRange(row, 4).setNumberFormat('#,##0.00;[Red](#,##0.00)');
-  mobile.getRange('B5:B7').clearContent();
-  mobile.getRange('B12').setValue(false);
+  mobile.getRange('B5:B8').clearContent();
+  mobile.getRange('B13').setValue(false);
   applyCategoryValidation_(mobile, spreadsheet.getSheetByName(TRACKER.lists));
   spreadsheet.toast('Transaction added and verified in the ledger.', 'Transaction Tracker', 5);
 }
@@ -176,6 +177,6 @@ function isDuplicate_(ledger, dateValue, type, category, amount, note) {
 }
 
 function rejectEntry_(spreadsheet, mobile, message) {
-  mobile.getRange('B12').setValue(false);
+  mobile.getRange('B13').setValue(false);
   spreadsheet.toast(message, 'Transaction not added', 7);
 }
