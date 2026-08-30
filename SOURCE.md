@@ -8,7 +8,7 @@ Their files still match the rewritten public standalone `main` trees:
 | Package | Previous standalone repo | Imported `main` | Release |
 |---|---|---|---|
 | edit-video | https://github.com/ChaithawatPon/edit-video.git | `77218de` | v1.0.2 |
-| sell-to-facebook-marketplace | https://github.com/ChaithawatPon/sell-to-facebook-marketplace.git | `b317582` | v1.1.2 |
+| sell-to-facebook | https://github.com/ChaithawatPon/sell-to-facebook-marketplace.git | `b317582` | v1.1.2 |
 | social-update | https://github.com/ChaithawatPon/social-update.git | `19686b2` | v1.0.1 |
 | today-obsidian | https://github.com/ChaithawatPon/today-obsidian.git | `c45b07d` | v1.0.1 |
 

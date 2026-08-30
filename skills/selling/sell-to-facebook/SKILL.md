@@ -1,9 +1,9 @@
 ---
-name: sell-to-facebook-marketplace
+name: sell-to-facebook
 description: Create, update, and manage Facebook Marketplace seller item listings, including preparing new item listings, handling safe buyer replies, reviewing stale inventory, and running approval-gated update, delete, or delete-and-relist maintenance. Use when a user wants seller-side Marketplace item help. Publishing, public listing changes, and deletion require fresh exact approval each run.
 ---
 
-# Sell to Facebook Marketplace
+# Sell to Facebook
 
 Seller-side Facebook Marketplace automation with hard publish and group-post
 gates.
@@ -183,7 +183,7 @@ If the package was installed via this repository's `scripts/install-skill.py`, p
 The repository ships only source files. These local runtime directories are created on demand and are intentionally gitignored:
 
 ```text
-sell-to-facebook-marketplace/
+sell-to-facebook/
 ├── output/   # generated draft, summary, and review JSON
 └── state/    # browser profile cache, prepared image conversions, follow-up state
 ```

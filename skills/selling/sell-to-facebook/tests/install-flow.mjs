@@ -15,7 +15,7 @@ test('install-skill installs production deps and installed runtime can resolve p
   try {
     const installedPath = execFileSync(
       'python3',
-      [INSTALLER, 'sell-to-facebook-marketplace', '--dest', destinationParent, '--root', REPO_ROOT],
+      [INSTALLER, 'sell-to-facebook', '--dest', destinationParent, '--root', REPO_ROOT],
       { encoding: 'utf8' }
     ).trim().split(/\r?\n/).filter(Boolean).at(-1)
 
@@ -50,7 +50,7 @@ test('install-skill rolls back the target when destination dependency install fa
           'python3',
           [
             INSTALLER,
-            'sell-to-facebook-marketplace',
+            'sell-to-facebook',
             '--dest',
             destinationParent,
             '--root',
@@ -63,7 +63,7 @@ test('install-skill rolls back the target when destination dependency install fa
       /installation failed and was rolled back/
     )
 
-    assert.equal(existsSync(join(destinationParent, 'sell-to-facebook-marketplace')), false)
+    assert.equal(existsSync(join(destinationParent, 'sell-to-facebook')), false)
     assert.deepEqual(readdirSync(destinationParent), [])
   } finally {
     rmSync(destinationParent, { recursive: true, force: true })

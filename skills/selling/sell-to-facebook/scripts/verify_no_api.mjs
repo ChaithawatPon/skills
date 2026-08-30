@@ -28,7 +28,7 @@ const API_PATTERNS = [
 ]
 
 function main() {
-  console.log('Verifying: no API keys in sell-to-facebook-marketplace scripts...\n')
+  console.log('Verifying: no API keys in sell-to-facebook scripts...\n')
 
   const scripts = [
     'scripts/facebook_marketplace_draft.mjs',

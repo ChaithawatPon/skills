@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sell to Facebook"
+  short_description: "Draft, audit, and safely maintain Marketplace listings"
+  default_prompt: "Use $sell-to-facebook to draft a listing, handle seller inbox work, audit stale inventory, or preview and approval-gate one listing update, delete, or delete-and-relist action before manual application and reload verification."
