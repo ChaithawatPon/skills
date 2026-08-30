@@ -7,6 +7,7 @@ const ROOT = dirname(dirname(fileURLToPath(import.meta.url)))
 const REPO_ROOT = dirname(ROOT)
 const OUTPUT_DIR = join(ROOT, 'output')
 const STATE_DIR = join(ROOT, 'state')
+const OPERATOR_PROFILE_PATH = join(STATE_DIR, 'operator-profile.json')
 // Set MARKETPLACE_BROWSER_STATE_DIR to reuse an existing headed Facebook profile.
 // The default is portable and does not assume a private workspace layout.
 const DEFAULT_FACEBOOK_BROWSER_DIR = join(homedir(), '.cache', 'facebook-marketplace-browser')
@@ -63,6 +64,7 @@ export {
   INSTALLER_ENV_VAR,
   LISTING_FACTS_DIR,
   OUTPUT_DIR,
+  OPERATOR_PROFILE_PATH,
   PREPARED_STATE_DIR,
   REPO_ROOT,
   ROOT,

@@ -8,6 +8,19 @@ description: Create, update, and manage Facebook Marketplace seller item listing
 Seller-side Facebook Marketplace automation with hard publish and group-post
 gates.
 
+## First-run setup
+
+Before live Facebook work, run `npm run setup`. It saves only the operator's
+country, city, optional area, search radius, language, and pickup/shipping
+preferences in ignored `state/operator-profile.json`. Never save passwords,
+cookies, tokens, or account numbers.
+
+To find current buyer groups, run `npm run groups:discover -- --category <category> [--brand <brand>]`.
+The browser searches Facebook using the setup location, checks each candidate's
+visible activity and normal post composer, scores local/category fit, and saves
+the result to ignored `state/discovered-groups.json`. Posting still requires a
+fresh exact approval packet.
+
 The package supports four main modes:
 
 1. Draft a new item listing from a photo folder, price, and explicit metadata JSON.

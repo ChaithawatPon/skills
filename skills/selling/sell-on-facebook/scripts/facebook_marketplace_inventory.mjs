@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path'
 import { chromium } from 'playwright'
 import { launchPersistentContext } from '../lib/browser_launch.mjs'
 import { BROWSER_STATE_DIR, OUTPUT_DIR, timestampSlug } from '../lib/runtime_paths.mjs'
+import { requireOperatorProfile } from '../lib/operator_profile.mjs'
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000
 
@@ -180,6 +181,7 @@ async function writePlan(plan) {
 }
 
 async function scanSellingInventory({ minClicks = 10, maxAgeDays = 7, writePlanFile = true } = {}) {
+  requireOperatorProfile()
   const { context, page } = await launchPage()
   try {
     await openSellingPage(page)
