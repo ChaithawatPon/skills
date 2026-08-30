@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path'
 import { autoInbox } from './facebook_marketplace_inbox.mjs'
 import { scanSellingInventory } from './facebook_marketplace_inventory.mjs'
 import { OUTPUT_DIR, timestampSlug } from '../lib/runtime_paths.mjs'
+import { requireOperatorProfile } from '../lib/operator_profile.mjs'
 
 async function writeSummary(summary, { outputDir = OUTPUT_DIR } = {}) {
   await mkdir(outputDir, { recursive: true })
@@ -16,6 +17,7 @@ async function writeSummary(summary, { outputDir = OUTPUT_DIR } = {}) {
 }
 
 async function runAutopilot() {
+  requireOperatorProfile()
   const inbox = await autoInbox()
   const inventory = await scanSellingInventory({ writePlanFile: true })
   const summary = {

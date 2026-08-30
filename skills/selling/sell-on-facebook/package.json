@@ -26,6 +26,8 @@
     "overlay": "node scripts/overlay_card.mjs",
     "overlay:self-test": "node scripts/overlay_card.mjs --self-test",
     "groups:plan": "node scripts/group_cross_post.mjs plan",
+    "setup": "node scripts/setup.mjs",
+    "groups:discover": "node scripts/facebook_group_discovery.mjs",
     "groups:self-test": "node scripts/group_cross_post.mjs --self-test",
     "self-test": "node scripts/facebook_marketplace_draft.mjs --self-test && node scripts/facebook_marketplace_publish.mjs --self-test && node scripts/facebook_marketplace_inbox.mjs --self-test && node scripts/facebook_marketplace_inventory.mjs --self-test && node scripts/facebook_marketplace_maintenance.mjs --self-test && node scripts/facebook_marketplace_autopilot.mjs --self-test && npm run sort:self-test && npm run overlay:self-test && npm run groups:self-test",
     "test": "npm run verify:no-api && node --test tests/*.mjs"

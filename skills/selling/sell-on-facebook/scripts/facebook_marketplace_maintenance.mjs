@@ -6,6 +6,7 @@ import { join, resolve } from 'node:path'
 import { createInterface } from 'node:readline/promises'
 import { fileURLToPath } from 'node:url'
 import { BROWSER_STATE_DIR, OUTPUT_DIR, timestampSlug } from '../lib/runtime_paths.mjs'
+import { requireOperatorProfile } from '../lib/operator_profile.mjs'
 
 const ALLOWED_ACTIONS = new Set(['update', 'delete', 'delete_and_relist'])
 const ALLOWED_CHANGE_FIELDS = new Set(['title', 'price_thb', 'description', 'category', 'condition'])
@@ -532,6 +533,7 @@ async function runSelfTest() {
 
 async function main() {
   if (process.argv.includes('--self-test')) return runSelfTest()
+  requireOperatorProfile()
   const index = process.argv.indexOf('--packet')
   if (index < 0 || !process.argv[index + 1]) throw new Error('Usage: facebook_marketplace_maintenance.mjs --packet <path> | --self-test')
   const packet = await loadPacketFromFile(process.argv[index + 1])

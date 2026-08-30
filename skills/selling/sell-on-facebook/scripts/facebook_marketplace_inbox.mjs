@@ -7,6 +7,7 @@ import { dirname, join, resolve } from 'node:path'
 import { chromium } from 'playwright'
 import { launchPersistentContext } from '../lib/browser_launch.mjs'
 import { BROWSER_STATE_DIR, FOLLOW_UP_STATE_FILE } from '../lib/runtime_paths.mjs'
+import { requireOperatorProfile } from '../lib/operator_profile.mjs'
 import { answerFromListingFact, loadListingFacts, matchListingFact } from '../lib/listing_facts.mjs'
 
 const STATE_FILE = FOLLOW_UP_STATE_FILE
@@ -392,6 +393,7 @@ async function sendAutoReply({ page, thread, state, now = Date.now(), facts = lo
 }
 
 async function scanInbox({ limit = 30 } = {}) {
+  requireOperatorProfile()
   const { context, page } = await launchPage()
   try {
     await openMarketplaceInbox(page)
@@ -431,6 +433,7 @@ async function scanInbox({ limit = 30 } = {}) {
 }
 
 async function autoInbox({ limit = 30 } = {}) {
+  requireOperatorProfile()
   const { context, page } = await launchPage()
   try {
     await openMarketplaceInbox(page)

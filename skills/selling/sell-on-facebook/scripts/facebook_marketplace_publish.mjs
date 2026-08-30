@@ -16,7 +16,8 @@ import { join, resolve } from 'path'
 import { createInterface } from 'readline/promises'
 import { createHash, randomUUID } from 'crypto'
 import { formatListingForDisplay, validateListing } from '../lib/marketplace_draft.mjs'
-import { BROWSER_STATE_DIR, OUTPUT_DIR, ROOT } from '../lib/runtime_paths.mjs'
+import { BROWSER_STATE_DIR, OUTPUT_DIR, ROOT, STATE_DIR } from '../lib/runtime_paths.mjs'
+import { requireOperatorProfile } from '../lib/operator_profile.mjs'
 import {
   clickExactOption,
   describeFormBlock,
@@ -490,7 +491,10 @@ async function requestGroupAuthorization(packet, { input = process.stdin, output
 }
 
 async function postGroups(page, listing, marketplaceItemUrl) {
-  const catalog = JSON.parse(readFileSync(join(ROOT, 'references/bangkok_selling_groups.example.json'), 'utf8'))
+  const discoveredPath = join(STATE_DIR, 'discovered-groups.json')
+  const catalogPath = existsSync(discoveredPath) ? discoveredPath : join(ROOT, 'references/bangkok_selling_groups.example.json')
+  if (!existsSync(catalogPath)) throw new Error('No group catalog found. Run: npm run groups:discover -- --category <category>')
+  const catalog = JSON.parse(readFileSync(catalogPath, 'utf8'))
   const groups = catalog.groups || []
   const imagePaths = pickGroupImages(listing.imagePaths)
   const caption = buildGroupPostCaption({
@@ -560,6 +564,7 @@ async function publishToFacebook(authorization, previewSnapshot, page) {
 }
 
 async function main() {
+  requireOperatorProfile()
   const draftArg = process.argv.slice(2).find((arg) => !arg.startsWith('--'))
   const { listing } = loadLatestDraft(draftArg)
   const { context, page } = await openDraftInBrowser(listing)
