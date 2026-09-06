@@ -70,7 +70,7 @@ Never infer success from an automation command's exit status.
 `job_hunter_doctor.py` reports:
 
 - `status` — local private setup readiness;
-- `approval_mode` — research, review, or autopilot;
+- `approval_mode` — research or review;
 - `profile` and `ledger` — path state, permission mode, and ledger record count;
 - `tools` — discovery plus the intended use of each boundary tool;
 - `outputs` — the four user-facing artifact types;

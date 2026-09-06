@@ -2,10 +2,15 @@
 
 ## Driver selection
 
+Prioritize `/android-harness` when an Android device is connected via USB for
+mobile social applications (Facebook, Instagram, Threads, TikTok, Lemon8, RedNote,
+X, LinkedIn, Reddit, YouTube) to prevent bot detection ("weird activity" warnings)
+and save context tokens via native UI hierarchy inspection (`ui_nodes()`).
+
 Use Agent Browser for navigation, snapshots, stable element references, and
-visible confirmation. Use Playwright for CDP inspection, file upload, complex
-widgets, exact DOM state, and recovery when a browser command cannot interact
-reliably.
+visible confirmation on desktop web. Use Playwright for CDP inspection, file
+upload, complex widgets, exact DOM state, and recovery when a browser command
+cannot interact reliably.
 
 Do not let Agent Browser and Playwright act concurrently on the same page.
 Attach Playwright to the existing browser session rather than launching a

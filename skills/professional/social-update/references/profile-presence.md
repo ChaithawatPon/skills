@@ -1,6 +1,6 @@
 # Profile and portfolio workflow
 
-Use this module for LinkedIn, GitHub, X, Facebook, Instagram, a freelance
+Use this module for LinkedIn, GitHub, X, Facebook, Instagram, Lemon8, Threads, RedNote, Reddit, a freelance
 marketplace, or another public professional profile.
 
 1. Confirm the exact platform, account, current public fields, and requested

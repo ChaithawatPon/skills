@@ -24,10 +24,16 @@ git clone https://github.com/ChaithawatPon/social-update.git \
 ## Modes
 
 - Profile/portfolio audit: read public state and propose exact field changes.
-- Public content: draft and privacy-review a complete platform packet.
+- Public content: draft and privacy-review a complete platform packet across 10 platforms (Facebook, TikTok, X, LinkedIn, Lemon8, Instagram, YouTube, Threads, RedNote, Reddit).
 - Job research: discover, deduplicate, score, and report.
 - Application review: tailor from verified evidence and pause before submit.
-- Approved autopilot: submit only within explicit stored rules, then verify.
+
+## Driver Selection & Anti-Detection
+
+- **Mobile social priority (`/android-harness`)**: Prioritizes `/android-harness` when an Android device is attached via USB for mobile social apps (Facebook, Instagram, Threads, TikTok, Lemon8, RedNote, X, LinkedIn, Reddit, YouTube) to avoid bot detection and minimize token consumption.
+- **Desktop web fallback (`agent-browser` / Playwright)**: Uses `agent-browser` or Playwright for desktop web workflows when no mobile device is connected.
+- **Strict review-mode approval**: Live publishing or external mutation strictly requires explicit interactive user approval.
+
 
 ## Private job data
 

@@ -54,9 +54,9 @@ def main() -> int:
 
     try:
         mode = nested(data, "approvals.mode")
-        if mode not in {"research", "review", "autopilot"}:
+        if mode not in {"research", "review"}:
             print(
-                "approvals.mode must be research, review, or autopilot",
+                "approvals.mode must be research or review",
                 file=sys.stderr,
             )
             return 1

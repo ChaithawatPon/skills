@@ -1,12 +1,13 @@
 ---
 name: social-update
-description: Manage an evidence-backed professional presence across LinkedIn, GitHub, X, Facebook, Instagram, YouTube, TikTok, freelance marketplaces, job search, recruiter email, public content, portfolio evidence, applications, and follow-ups. Use when the user invokes /social-update; requests a profile audit or edit, portfolio presentation, social post, job discovery or application, resume tailoring, recruiter outreach, opportunity reply, or private application ledger; or uses the former professional-presence, career-pilot, or job-hunter names.
+description: Manage an evidence-backed professional presence across LinkedIn, GitHub, X, Facebook, Instagram, YouTube, TikTok, Lemon8, Threads, RedNote, Reddit, freelance marketplaces, job search, recruiter email, public content, portfolio evidence, applications, and follow-ups. Use when the user invokes /social-update; requests a profile audit or edit, portfolio presentation, social post, carousel, job discovery or application, resume tailoring, recruiter outreach, opportunity reply, or private application ledger; or uses the former professional-presence, career-pilot, or job-hunter names.
 ---
 
 # Social Update
 
 Use one truthful workflow for careers, professional profiles, public portfolio
-content, applications, and follow-up. The former names
+content, applications, and follow-up across 10 canonical platforms (Facebook, TikTok,
+X, LinkedIn, Lemon8, Instagram, YouTube, Threads, RedNote, Reddit). The former names
 `professional-presence`, `career-pilot`, and `job-hunter` are compatibility
 wording only, not separate skills.
 
@@ -18,24 +19,44 @@ wording only, not separate skills.
   submitting an application, sending outreach, or replying to a recruiter.
 - Read [references/platform-playbook.md](references/platform-playbook.md) before
   operating a job site, ATS, GitHub, or email surface.
+- Read [references/platform-tones.md](references/platform-tones.md) for
+  platform-specific voice, tone, and audience adaptations.
 - Read [references/outreach.md](references/outreach.md) for cold email and
   follow-up work.
 - Read [references/profile-presence.md](references/profile-presence.md) for a
   public profile, portfolio, or freelance listing.
 - Read [references/social-content.md](references/social-content.md) for a post,
   launch update, or public media asset.
-- Read [references/youtube-tiktok.md](references/youtube-tiktok.md) for a
-  YouTube Community post or TikTok photo/video post.
+- Read [references/lemon8.md](references/lemon8.md) for Lemon8 3:4 carousels,
+  cover hooks, and tags.
+- Read [references/threads.md](references/threads.md) for Threads conversational
+  posts and reply chains.
+- Read [references/rednote.md](references/rednote.md) for RedNote (Xiaohongshu)
+  3:4 visual notes and guides.
+- Read [references/reddit.md](references/reddit.md) for Reddit technical
+  showcases and subreddit-compliant discussions.
+- Read [references/youtube-tiktok.md](references/youtube-tiktok.md) for YouTube
+  Community/Shorts/video posts or TikTok photo/video posts.
 
 ## Route the request
 
 - **Profiles and portfolio**: audit read-only, ground every claim in public or
   user-approved evidence, then show exact field replacements before an edit.
-- **Public content**: draft and privacy-review the complete post and assets;
-  publishing and native scheduling each remain separate platform approvals.
+- **Public content**: draft and privacy-review the complete post and assets across
+  all 10 platforms; publishing and native scheduling each remain separate platform
+  approvals. Adapt writing voice per platform via [references/platform-tones.md](references/platform-tones.md).
+  Interactive review-mode is strictly mandatory before any live publish.
+- **Driver selection & anti-detection**: prioritize `/android-harness` when an
+  Android phone is connected via USB for mobile social apps (Facebook, Instagram,
+  Threads, TikTok, Lemon8, RedNote, X, LinkedIn, Reddit, YouTube) to avoid bot flags
+  and save context tokens; fall back to `agent-browser` / Playwright for desktop web.
 - **YouTube and TikTok**: keep each platform in a separate same-day packet;
   verify the signed-in account, final format, visibility, scheduled-content
   state when used, and direct public URL after publication.
+- **Lemon8 & RedNote**: format 3:4 vertical carousels with slide 1 cover hooks, scannable tips,
+  and niche hashtags; prioritize `/android-harness`.
+- **Threads & Reddit**: craft conversational community-grounded or technically deep
+  posts respecting community rules and authentic builder tone.
 - **Jobs and opportunities**: follow the research, review, application, ledger,
   outreach, and verification workflow below.
 - **Cross-platform audit**: separate findings and approval packets by platform;
@@ -65,9 +86,8 @@ Confirm or infer the requested operation:
 - `research`: discover, deduplicate, score, and report.
 - `review`: prepare or fill applications and messages, then pause at the
   approval boundary.
-- `autopilot`: submit or send only within explicit, stored rules.
 
-Default to `review` when the profile does not specify a mode. A prior approval
+Review mode is mandatory for any external action. A prior approval
 for one application is not standing approval for unrelated applications.
 
 Validate the profile:
