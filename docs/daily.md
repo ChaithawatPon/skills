@@ -13,3 +13,4 @@ Packages:
 - `find-sell-spont`
 - `find-place-to-eat`
 - `transaction`
+- [`android-harness`](https://github.com/ChaithawatPon/android-harness) — standalone package for USB-connected Android control

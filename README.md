@@ -101,6 +101,7 @@ See [university details](docs/university.md).
 | [find-sell-spont](skills/daily/find-sell-spont/SKILL.md) | Finds short-term preloved-item stalls and verifies fees and seller eligibility. |
 | [find-place-to-eat](skills/daily/find-place-to-eat/SKILL.md) | Finds places to eat using branch, menu, hours, price, and review evidence. |
 | [transaction](skills/daily/transaction/SKILL.md) | Adds confirmed entries to an optional spreadsheet template or new tracker. |
+| [android-harness](https://github.com/ChaithawatPon/android-harness) | Controls a USB-connected Android device with ADB; maintained as a standalone skill. |
 
 See [daily details](docs/daily.md).
 

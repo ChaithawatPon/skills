@@ -18,6 +18,10 @@ Their files still match the rewritten public standalone `main` trees:
 `sell-on-shopee`, `sell-on-thaimart`, and `sell-on-tiktok-shop` are
 public-safe rewrites. They do not copy private installed skill trees.
 
+`android-harness` remains a standalone public package at
+https://github.com/ChaithawatPon/android-harness. The catalog links to that
+canonical source instead of copying its tree, preventing divergent releases.
+
 After this catalog is on `main` and CI is green, the standalone public skill
 repositories are scheduled for deletion. `arm-robot-simulation` and the
 profile README repo stay.
