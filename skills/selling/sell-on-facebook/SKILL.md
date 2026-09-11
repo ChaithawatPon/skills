@@ -2,6 +2,8 @@
 name: sell-on-facebook
 description: Create, update, and manage Facebook Marketplace seller item listings, including preparing new item listings, handling safe buyer replies, reviewing stale inventory, and running approval-gated update, delete, or delete-and-relist maintenance. Use when a user wants seller-side Marketplace item help. Publishing, public listing changes, and deletion require fresh exact approval each run.
 ---
+> Prefer **/sell-item** as the entry point. It asks which marketplace to use, then loads this skill. Invoke `/sell-on-facebook` directly only when the platform is already known.
+
 
 # Sell to Facebook
 

@@ -2,6 +2,8 @@
 name: sell-on-tiktok-shop
 description: Manage TikTok Shop seller listings through the logged-in seller website. Use for product drafts, publishing, inventory and price updates, order monitoring, buyer-message drafts, and compliant basket-content preparation.
 ---
+> Prefer **/sell-item** as the entry point. It asks which marketplace to use, then loads this skill. Invoke `/sell-on-tiktok-shop` directly only when the platform is already known.
+
 
 # Sell to TikTok Shop
 

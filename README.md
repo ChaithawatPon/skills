@@ -69,11 +69,12 @@ claude plugin install chaithawatpon-skills@chaithawatpon-skills
 
 | Skill | Outcome |
 |---|---|
-| [sell-on-facebook](skills/selling/sell-on-facebook/SKILL.md) | Marketplace listings and seller workflows with approval before public actions. |
-| [sell-on-shopee](skills/selling/sell-on-shopee/SKILL.md) | Second-hand Shopee drafts and seller-centre work. |
-| [sell-on-thaimart](skills/selling/sell-on-thaimart/SKILL.md) | Second-hand ThaiMart drafts and seller-centre work. |
-| [sell-on-tiktok-shop](skills/selling/sell-on-tiktok-shop/SKILL.md) | TikTok Shop drafts, orders, and shoppable basket content. |
-| [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork service listings with review before save or publish. |
+| [sell-item](skills/selling/sell-item/SKILL.md) | **Entry point.** Asks where to post (Facebook, Shopee, ThaiMart, TikTok Shop, Amazon, eBay, …), then routes to the matching platform backend. |
+| [sell-on-facebook](skills/selling/sell-on-facebook/SKILL.md) | Backend: Marketplace listings and seller workflows with approval before public actions. Prefer `/sell-item`. |
+| [sell-on-shopee](skills/selling/sell-on-shopee/SKILL.md) | Backend: second-hand Shopee drafts and seller-centre work. Prefer `/sell-item`. |
+| [sell-on-thaimart](skills/selling/sell-on-thaimart/SKILL.md) | Backend: second-hand ThaiMart drafts and seller-centre work. Prefer `/sell-item`. |
+| [sell-on-tiktok-shop](skills/selling/sell-on-tiktok-shop/SKILL.md) | Backend: TikTok Shop drafts, orders, and shoppable basket content. Prefer `/sell-item`. |
+| [post-service-on-fastwork](skills/selling/post-service-on-fastwork/SKILL.md) | Thai Fastwork *service* listings with review before save or publish (not item resale). |
 
 See [selling details](docs/selling.md).
 

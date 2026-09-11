@@ -15,7 +15,7 @@ Their files still match the rewritten public standalone `main` trees:
 `check-assignment`, `get-file-from-assignment`, `do-assignment`, `eli5-assignment`,
 `clean-mac-storage`, `mac-health`, `clean-digital-footprint`, `find-room`,
 `find-item`, `find-sell-spont`, `find-place-to-eat`, `transaction`,
-`sell-on-shopee`, `sell-on-thaimart`, and `sell-on-tiktok-shop` are
+`sell-item` (router), `sell-on-shopee`, `sell-on-thaimart`, and `sell-on-tiktok-shop` are
 public-safe rewrites. They do not copy private installed skill trees.
 
 `android-harness` remains a standalone public package at

@@ -2,6 +2,8 @@
 name: sell-on-thaimart
 description: Manage second-hand ThaiMart seller listings through the logged-in seller website. Use for monitoring products and orders, creating or editing drafts, and profile maintenance.
 ---
+> Prefer **/sell-item** as the entry point. It asks which marketplace to use, then loads this skill. Invoke `/sell-on-thaimart` directly only when the platform is already known.
+
 
 # Sell To ThaiMart
 

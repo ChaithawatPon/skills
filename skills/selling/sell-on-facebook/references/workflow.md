@@ -1,3 +1,5 @@
+> Entry point for new listing work: prefer **/sell-item**, which routes here when Facebook is selected.
+
 # Marketplace Workflow
 
 Read the branch matching the current input. A later branch cannot consume stale output from an earlier item.
